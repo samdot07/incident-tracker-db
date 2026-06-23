@@ -146,8 +146,7 @@ db/                                      # Python app implementation
 │       ├── sec.py                       # DSN security
 │       └── utils.py                     # Custom insert
 ├── alembic.ini                          # Alembic migration configuration
-├── main.py                              # Database deployment orchestrator
-└── README.md                            # This file
+└── main.py                              # Database deployment orchestrator
 ```
 
 ```
