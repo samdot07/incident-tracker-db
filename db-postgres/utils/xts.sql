@@ -1,0 +1,2 @@
+CREATE EXTENSION IF NOT EXISTS pg_trgm WITH SCHEMA geopolitical_tracker
+CREATE EXTENSION IF NOT EXISTS postgis WITH SCHEMA geopolitical_tracker

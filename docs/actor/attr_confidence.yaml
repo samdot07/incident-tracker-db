@@ -1,0 +1,118 @@
+attribution_confidence_protocols:
+  code: ATTR_CONF
+  name: Attribution Confidence Protocols
+
+  subcategories: 
+  - code: CONFRM
+    name: |
+      Confidence Level 1: Confirmed
+    definition: |
+      Attribution or factual claim supported by official government acknowledgment, incontrovertible documentary evidence, or multiple independent primary sources with direct knowledge providing consistent accounts
+
+    evidence_standards:
+      - Official government press releases, ministry statements, or military announcements acknowledging actor involvement
+      - Firsthand journalistic reporting from credible outlets with reporters directly observing incidents
+      - |
+        Multiple (3+) independent sources including primary sources (government officials, military personnel, direct witnesses) providing consistent accounts
+      - |
+        Photographic or video evidence definitively identifying actors (military unit markings, vessel identification numbers, official insignia clearly visible)
+      - Legal proceedings or tribunal findings establishing facts (arbitration awards, court judgments)
+
+    anchoring_examples:
+      - event: U.S. FONOPs
+        definition: U.S. Navy press releases explicitly announcing operations, vessel identifications provided, routes documented
+        confidence: Confirmed
+      - event: ASEAN Summit outcomes
+        definition: | 
+          Official ASEAN communiqués, host country statements, multiple participating governments' readouts providing consistent accounts 
+        confidence: Confirmed
+      - event: Armed incidents with acknowledged casualties
+        definition: Government announcements of military casualties, official death tolls, military funerals
+        confidence: Confirmed
+
+  - code: SUS
+    name: | 
+      Confidence Level 2: Suspected
+    definition: |
+      Attribution or factual claim supported by strong circumstantial evidence, credible secondary sources, or informed analysis from established experts/institutions, but lacking official confirmation or incontrovertible primary evidence. Represents high probability based on available evidence but retains uncertainty acknowledging incomplete information
+
+    evidence_standards:
+      - |
+        Credible think tank analysis attributing incidents based on circumstantial evidence (vessel tracking data, operational patterns, modus operandi matching known actors)
+      - News reporting from reputable outlets citing unnamed official sources or informed analysts
+      - Technical analysis (satellite imagery interpretation, vessel automatic identification system data analysis) by recognized experts
+      - Pattern recognition suggesting state involvement based on capabilities, motivations, and operational signatures
+      - Single primary source account lacking corroboration but from highly credible source
+
+    anchoring_examples:
+      - event: Zhongguo Haishang Minbing (People's Armed Forces Maritime Militia) attribution
+        definition: |
+          Vessels lack official markings but exhibit coordination, identical characteristics, operate in patterns suggesting state direction, identified by think tank analysis (CSIS AMTI, CNAS) 
+        confidence: |
+          Suspected (elevated to Confirmed if official Chinese statements acknowledge or multiple primary sources document coordination)
+      - event: Cyber operations
+        definition: |
+          Malware analysis, infrastructure attribution, modus operandi matching known state-sponsored groups, cybersecurity firm attribution 
+        confidence: Suspected (rarely reaches Confirmed without government official attribution)
+      - event: Informal economic restrictions
+        definition: |
+          Customs delays targeting specific country exporters documented by business associations, temporal correlation with political disputes, but no official policy announcement
+        confidence: Suspected
+
+  - code: 3RD_PARTY
+    name: | 
+      Level 3: Third-Party Attribution
+    definition: |
+      Attribution made by external credible entity (foreign government, international organization, established research institution) but not confirmed by the attributed actor or definitive independent evidence. Represents claims accepted by significant portions of expert community but remaining contested or unverified by some parties
+
+    evidence_standards:
+      - |
+        Foreign government official statements attributing incidents to specific actors (U.S. government attributing cyber operations to Chinese state-sponsored groups)
+      - |
+        International organization findings or reports attributing responsibility (UN panels of experts, Human Rights Watch investigative reports)
+      - Tribunal or court findings when defendant contests or does not participate (arbitration awards where respondent rejects jurisdiction)
+      - Established think tank definitive attribution reports synthesizing multiple evidence types
+
+    anchoring_examples:
+      - event: Cyber operations attributed by U.S. government to Chinese state-sponsored actors
+        definition: U.S. official statements naming PLA units, Department of Justice indictments
+        confidence: Third-Party Attribution (unless China acknowledges, which rarely occurs)
+      - event: South China Sea Arbitral Tribunal findings
+        definition: Tribunal ruled on Philippine claims against China, China rejected jurisdiction and findings
+        confidence: Third-Party Attribution for specific factual findings China contests
+      - event: Human rights violation attributions
+        definition: |
+          International human rights organizations attribute atrocities to specific military units based on investigations, implicated government denies
+        confidence: Third-Party Attribution
+    
+    note: |
+      When insufficient information exists to determine confidence level, default to "Suspected" rather than "Contested" if single plausible attribution exists based on circumstantial evidence; reserve "Contested" for situations with genuine competing claims from credible sources rather than mere absence of confirming evidence
+
+  - code: CNTEST
+    name: | 
+      Confidence Level 4: Contested
+    definition: |
+      Significant disagreement exists among credible sources regarding attribution or factual claims, with multiple competing accounts from sources of roughly comparable credibility. Represents genuine uncertainty where available evidence permits multiple reasonable interpretations or where state actors provide conflicting official accounts
+
+    evidence_standards:
+      - Multiple credible sources providing materially different accounts of actor involvement or incident facts
+      - Official government statements directly contradicting each other on factual questions
+      - Expert analysis divided on attribution with competing schools of thought presenting reasonable arguments
+      - Propaganda environments where information warfare obscures factual determination
+
+    anchoring_examples:
+      - event: Incidents in information-contested environments
+        definition: |
+          Myanmar civil conflict incidents where Tatmadaw, ethnic armed organizations, and opposition provide contradictory accounts, independent verification impossible
+        confidence: Contested
+      - event: Border incidents with competing territorial claims
+        definition: |
+          Incidents on disputed borders where both sides claim self-defense responding to other's provocation, no independent witnesses = 
+        confidence: Contested
+      - event: Ambiguous gray-zone operations
+        definition: |
+          Incidents potentially involving state actors but also potentially private actors without state coordination, insufficient evidence determining state involvement
+        confidence: Contested
+
+    note: |
+      When insufficient information exists to determine confidence level, default to "Suspected" rather than "Contested" if single plausible attribution exists based on circumstantial evidence; reserve "Contested" for situations with genuine competing claims from credible sources rather than mere absence of confirming evidence

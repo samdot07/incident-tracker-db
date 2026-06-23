@@ -1,0 +1,141 @@
+legal_normative_impact_dimensions:
+  code: LGL_NORMTV
+  name: Legal-Normative Impact Dimensions
+  definition: |
+    This dimension evaluates incident implications for international law, regional norms, and rules-based order, assessing whether incidents affirm, test, or violate established legal frameworks and normative expectations
+  
+  subcategories:
+    - code: AFFRM
+      name: Affirming
+      definition: |
+        Incident demonstrates respect for international law, strengthens rules-based order, or establishes positive precedent for norm compliance
+      
+      indicators: |
+        Explicit citation of international law in justifying actions, compliance with tribunal rulings, respect for UNCLOS provisions, peaceful dispute resolution through legal mechanisms, transparency consistent with international standards
+      
+      anchoring_examples:
+      - event: Philippines bringing South China Sea arbitration case
+        date: Jauly 2016
+        location: Den Haag (The Hague), Nederland (Netherlands)
+        definition: Using legal mechanisms for dispute resolution (ongoing)
+        status: Affirming
+      - event: U.S. FONOPs explicitly citing UNCLOS Article 87 freedom of navigation
+        date: May 2016
+        location: Fiery Cross Reef
+        definition: Asserting international law provisions
+        status: Affirming
+      - event: 49th ASEAN Foreign Ministers' Meeting (AMM)
+        date: July 2016
+        location: Viang Chan (Vientiane), Lao PDR (Laos)
+        definition: ASEAN statements reaffirming commitment to UNCLOS and peaceful dispute resolution
+        status: Affirming
+      - event: EU-Malaysia Framework Agreement on Partnership and Cooperation (PCA)
+        date: April 2016
+        location: Wilayah Persekutuan Putrajaya (Putrajaya), Malaysia
+        definition: Bilateral agreements incorporating international legal standards
+        status: Affirming
+    
+    - code: NUTRL
+      name: Neutral
+      definition: |
+        Incident neither significantly strengthens nor undermines international legal norms; operates in areas where international law provides limited guidance or where legal implications remain ambiguous
+      
+      indicators: |
+        Actions within clearly permitted scope of international law without precedent-setting dimensions, technical implementation of existing legal obligations, or activities in legal gray areas where multiple interpretations exist
+      
+      anchoring_examples:
+      - event: Indonesia-Singapore Eagle Indopura Exercise
+        date: September 2021
+        location: Laut Natuna (Natuna Sea), Indonesia
+        definition: Routine bilateral defense cooperation. Within sovereign state rights, no particular legal implications
+        status: Neutral
+      - event: Regional Comprehensive Economic Partnership (RCEP)
+        date: November 2020
+        location: Virtual
+        definition: Economic agreements following standard treaty practice
+        status: Neutral
+      - event: 44th and 45th ASEAN Summits
+        date: October 2024
+        location: Viang Chan (Vientiane), Lao PDR (Laos)
+        definition: Diplomatic engagements without legal dimensions
+        status: Neutral
+      - event: ASEAN Solidarity Exercise (ASEX-01N)
+        date: September 2023
+        location: Laut Natuna (Natuna Sea)/Kota Batam (Batam), Indonesia
+        definition: Military exercises in clearly sovereign territory or uncontested international waters 
+        status: Neutral
+
+    - code: TEST
+      name: Testing
+      definition: |
+        Incident probes boundaries of international law, challenges interpretations without outright violations, or operates in legal gray zones pushing normative limits while maintaining plausible legal justifications
+      
+      indicators: |
+        Actions with contested legal interpretations, exploiting ambiguities in international law, challenging but not outright rejecting legal frameworks, "salami-slicing" incrementalism testing response thresholds
+      
+      anchoring_examples:
+      - event: Chinese artificial island construction
+        location: South China Sea
+        definition: |
+          Claims sovereignty over features, builds installations; legal status contested under UNCLOS but China asserts sovereignty rights (ongoing)
+        status: Testing
+      - event: Chinese historic rights claims reaffirmation in South China Sea
+        date: July 2016
+        location: South China Sea
+        definition: Claims based on contested legal theories not clearly supported by UNCLOS 
+        status: Testing
+      - event: Coast guard operations in contested EEZs
+        date: February 2024
+        location: Scarborough Shoal
+        definition: Asserting jurisdiction in areas where claims overlap, operating within claimed rights but contested by others 
+        status: Testing
+      - event: Dual-use infrastructure in disputed areas
+        date: March 2017
+        location: Fiery Cross Reef/Mischief Reef
+        definition: Military facilities on features with contested sovereignty 
+        status: Testing
+
+    - code: VIOLTN
+      name: Violating
+      definition: |
+        Incident constitutes clear violation of international law, explicit rejection of legal rulings, or egregious breach of fundamental norms (use of force prohibitions, sovereignty principles, human rights law)
+      
+      indicators: |
+        Actions directly contravening tribunal rulings, violations of UNSC resolutions, use of force absent self-defense justification, rejection of binding international legal obligations, widespread international condemnation citing legal violations
+      
+      anchoring_examples:
+      - event: China's rejection of 2016 Arbitral Tribunal ruling
+        date: July 2016
+        location: Den Haag (The Hague), Nederland (Netherlands)
+        definition: Explicit refusal to accept binding legal decision under UNCLOS 
+        status: Violating (regarding rejection of legal process, though China claims tribunal lacked jurisdiction)
+      - event: Myanmar military coup 2021
+        date: February 2021
+        location: Nay Pyi Taw (Naypyidaw), Myanmar
+        definition: |
+          Violation of constitutional order, followed by violence against civilians violating international humanitarian law and human rights law 
+        status: Violating
+      - event: Hypothetical use of force without self-defense justification
+        definition: Would violate UN Charter Article 2(4) prohibition on use of force 
+        status: Violating
+      - event: Major armed attacks on civilians by state forces
+        definition: Violations of international humanitarian law 
+        status: Violating
+
+  coding_protocols:
+  - |
+    Assess legal-normative implications based on international law standards (UNCLOS, UN Charter, customary international law) and established regional norms (ASEAN Treaty of Amity and Cooperation, ASEAN Charter provisions)
+  - |
+    Distinguish between contested legal interpretations (Testing) and clear violations where international legal consensus exists (Violating); err toward Testing category when genuine legal ambiguity exists
+  - |
+    Use NULL for incidents lacking international legal dimensions (purely domestic matters, technical cooperation without normative implications)
+  - Note in event description specific legal frameworks or norms implicated (UNCLOS Articles, UN Charter provisions, regional agreements)
+
+  evidence_standards:
+  - International legal expert analysis from academic institutions or established think tanks
+  - Statements by international law scholars in credible publications
+  - International tribunal or court rulings and reasoning
+  - Official government statements citing international law provisions
+  - UN or regional organization reports assessing legal dimensions
+  - |
+    Comparative state practice (are other states acting similarly, suggesting accepted interpretation? Or is action widely condemned, suggesting violation?)

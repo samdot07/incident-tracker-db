@@ -1,0 +1,240 @@
+economic:
+  code: ECON
+  name: Economic Event Category
+  definition: |
+    Economic events encompass trade, investment, financing, and economic policy interactions between states or involving state economic measures affecting regional dynamics. The category includes both cooperative economic integration mechanisms and coercive economic statecraft, distinguished by intent and context. Economic events possess clear commercial or financial dimensions beyond purely political or military aspects
+
+  subcategories:
+    - code: TRADE_AGMNT
+      name: Trade Agreement
+      definition: |
+        Bilateral or multilateral agreements governing trade relations including free trade agreements, preferential trade arrangements, tariff modifications, customs procedures, and trade facilitation frameworks. Encompasses agreement negotiations, signings, ratifications, entries into force, and significant implementation milestones or disputes
+
+      inclusion_criteria:
+        - Formal government-to-government agreements with documented texts
+        - Substantive trade provisions affecting tariffs, market access, or regulatory harmonization
+        - Official negotiation rounds with documented progress or outcomes
+        - Agreement implementation milestones or dispute resolution proceedings
+
+      exclusion_criteria:
+        - Private commercial contracts between companies without government involvement
+        - Investment agreements lacking trade dimensions (code as Investment and Financing)
+        - General economic cooperation statements without binding trade commitments
+
+      boundary_cases:
+        - |
+          Comprehensive economic agreements: Code agreements combining trade, investment, and services provisions as Trade Agreement if trade liberalization constitutes primary component; as Investment and Financing if infrastructure or capital flows dominate
+        - |
+          Trade disputes: Code formal dispute resolution proceedings under trade agreements (WTO complaints, FTA arbitration) as Trade Agreement events documenting institutional operation
+        - |
+          Negotiation failures: Code collapse of trade negotiations as Trade Agreement events if failure itself carries strategic significance (e.g., U.S. withdrawal from Trans-Pacific Partnership negotiations)
+
+      anchoring_examples:
+        - event: Regional Comprehensive Economic Partnership (RCEP) Signing
+          date: November 2020
+          location: Virtual
+          definition: |
+            Fifteen Asia-Pacific nations (10 ASEAN + China, Japan, South Korea, Australia, New Zealand) sign world's largest trade agreement after eight years of negotiations, creating integrated market of 2.2 billion people
+          significance: Critical, major economic integration milestone excluding United States
+        - event: Indonesia-Australia Comprehensive Economic Partnership Agreement Entry into Force
+          date: July 2020
+          definition: |
+            Bilateral FTA enters force after ratification, eliminating tariffs on 94% of Indonesian exports and 99% of Australian exports, including sensitive agricultural sectors
+          significance: Medium, bilateral economic relationship deepening
+        - event: U.S.-China Phase One Trade Deal
+          date: January 2020
+          location: Washington, D.C., United States
+          definition: |
+            United States and China sign partial trade agreement pausing tariff escalation and committing China to increased U.S. agricultural purchases, affecting ASEAN supply chain calculations
+          significance: High, temporary de-escalation of U.S.-China trade war with regional spillover implications
+        - event: ASEAN Trade in Goods Agreement (ATIGA) Amendments
+          date: September 2021
+          location: Virtual
+          definition: |
+            ASEAN members approve amendments to intra-ASEAN trade agreement enhancing rules of origin flexibility and customs procedures harmonization, advancing economic integration
+          significance: Medium, incremental improvement to existing frameworks
+        - event: Viet Nam-EU Free Trade Agreement (EVFTA) Implementation
+          date: August 2020
+          definition: |
+            Comprehensive FTA between Viet Nam and European Union enters force, eliminating 99% of tariffs and providing Viet Nam preferential access to European markets
+          significance: High, Viet Nam's economic diversification strategy beyond China dependence
+
+    - code: INVST_FIN
+      name: Investment and Financing
+      definition: |
+        Infrastructure financing initiatives, bilateral investment treaties, development bank lending, major capital project agreements, foreign direct investment policy changes, and public financing arrangements. Encompasses both multilateral development financing and bilateral government-backed investment projects, particularly Belt and Road Initiative projects and alternative connectivity initiatives
+
+      inclusion_criteria:
+        - Government-to-government financing agreements or sovereign guarantees
+        - Multilateral development bank lending with strategic policy dimensions
+        - Major infrastructure projects with state-owned enterprise or government backing
+        - Bilateral investment treaty negotiations, signings, or dispute settlements
+        - Foreign investment policy changes affecting regional capital flows
+
+      exclusion_criteria:
+        - Purely private commercial investments without government involvement or strategic implications
+        - Routine development bank project lending without significant policy dimensions
+        - Corporate mergers and acquisitions unless involving state-owned enterprises or triggering investment screening
+
+      boundary_cases:
+        - |
+          BRI projects: Code Belt and Road Initiative projects as Investment and Financing regardless of implementing entity if projects receive Chinese government backing or strategic emphasis in bilateral relations
+        - |
+          Investment screening: Code establishment or application of foreign investment security review mechanisms (CFIUS-type systems) as Investment and Financing when targeting specific countries or sectors with strategic implications
+        - |
+          Debt sustainability crises: Code debt renegotiations or restructurings of strategic infrastructure projects as Investment and Financing events documenting economic statecraft consequences
+
+      anchoring_examples:
+        - event: China-Indonesia High-Speed Rail Project Completion
+          date: October 2023 
+          location: DKI Jakarta (Jakarta)-Kota Bandung (Bandung), Indonesia
+          definition: |
+            First phase of Chinese-financed Jakarta-Bandung high-speed rail opens, Belt and Road Initiative flagship project after numerous delays and cost overruns
+          significance: High, demonstration of BRI infrastructure delivery capacity and challenges
+        - event: Japan-ASEAN Connectivity Initiative Funding Announcement
+          date: November 2019
+          location: Krung Thep (Bangkok), Prathet Thai (Thailand)
+          definition: |
+            Japan announces $billions in infrastructure financing for Southeast Asian connectivity projects, positioned as alternative to Belt and Road Initiative emphasizing quality infrastructure and debt sustainability
+          significance: High, competitive infrastructure financing by external powers
+        - event: U.S. International Development Finance Corporation (DFC) Southeast Asia Investment
+          date: June 2021
+          definition: |
+            DFC approves financing for multiple Southeast Asian infrastructure and technology projects as part of Build Back Better World initiative countering BRI
+          significance: Medium, U.S. attempt to provide BRI alternative through development finance
+        - event: Sri Lanka Hambantota Port Debt-for-Equity Swap
+          date: July 2017 
+          location: Ambaanthottai (Hambantota), Ilankai (Sri Lanka)
+          definition: |
+            Sri Lanka transfers Chinese-financed port to 99-year Chinese lease due to debt servicing inability, generating regional concerns about debt-trap diplomacy affecting ASEAN BRI calculations (regional spillover implications)
+          significance: High, cautionary precedent influencing regional BRI reception
+        - event: Asian Infrastructure Investment Bank (AIIB) Lending to ASEAN Projects
+          definition: |
+            China-initiated multilateral development bank approves multiple Southeast Asian infrastructure financing projects, establishing institutional alternative to Western-dominated World Bank/ADB (ongoing)
+          significance: Medium per project, cumulative High for regional financing architecture
+
+    - code: ECON_CORCN
+      name: Economic Coercion
+      definition: |
+        Economic measures employed coercively to influence political behavior or punish policy positions, including sanctions, export controls, import restrictions, market access denial, investment screening targeting specific countries, and other economic tools used with explicit or implicit political conditionality. Distinguishes from routine trade policy through coercive intent linked to political objectives.
+
+      inclusion_criteria:
+        - Economic measures explicitly linked to political grievances or demands in official statements or credible analysis
+        - Informal or unofficial economic restrictions targeting specific countries (customs delays, regulatory harassment, unofficial bans)
+        - Sanctions regimes imposed for political rather than commercial reasons
+        - Export controls or investment restrictions targeting specific countries for strategic competition
+        - Clear temporal correlation between political disputes and economic measures
+
+      exclusion_criteria:
+        - Routine trade remedies (antidumping, countervailing duties) based on economic criteria without political linkages
+        - Multilateral sanctions with broad international support and clear legal violations (UN Security Council sanctions)
+        - Economic measures with purely commercial justification (food safety standards, technical regulations) absent political context
+
+      boundary_cases:
+        - |
+          Informal restrictions: Code unofficial bans, customs delays, or regulatory obstacles as Economic Coercion if multiple credible sources identify political motivations and targeted country patterns
+        - |
+          Ambiguous causation: When economic measures occur contemporaneously with political disputes but official justifications cite commercial reasons, code as Economic Coercion if circumstantial evidence (timing, selective targeting, reversal following political accommodation) suggests political motivations
+        - |
+          Withdrawal of economic benefits: Code removal of preferential treatment or cancellation of announced investments/projects as Economic Coercion if occurring in political dispute contexts
+
+      anchoring_examples:
+        - event: China Informal Banana Import Restrictions on Philippines
+          date: July 2016
+          location: China (ports)
+          definition: |
+            Following Permanent Court of Arbitration ruling favoring Philippines in South China Sea dispute, Chinese customs imposes heightened inspection requirements causing Philippine banana exports to rot at ports, interpreted as economic retaliation
+          significance: High, gray-zone economic coercion without formal sanctions
+        - event: U.S. Semiconductor Export Controls Affecting China-ASEAN Supply Chains
+          date: October 2022
+          location: Washington, D.C., United States
+          definition: |
+            United States implements sweeping export controls restricting advanced semiconductor equipment and technology transfers to China, affecting regional electronics manufacturing supply chains and forcing ASEAN firms to navigate technology decoupling.
+          significance: Critical, economic dimension of U.S.-China strategic competition restructuring regional production networks
+        - event: China Rare Earth Export Restrictions
+          date: December 2010
+          location: Beijing, China
+          definition: |
+            China restricts rare earth element exports during territorial disputes with Japan, demonstrating economic leverage and influencing subsequent ASEAN strategic calculations regarding resource dependencies (precedent relevant to ASEAN context)
+          significance: High as precedent informing regional supply chain diversification strategies
+        - event: U.S. Sanctions on Myanmar Military Leaders Following 2021 Coup
+          date: February 2021
+          location: Washington, D.C., United States
+          description: |
+            U.S. Treasury targets Myanmar military leaders following February 2021 coup and violence against protesters
+          significance: High, economic response to political crisis generating regional spillover effects
+        - event: EU Sanctions on Myanmar State-Owned Enterprises Following 2021 Coup
+          date: March 2021
+          location: Brussels, Belgium
+          description: |
+            EU imposes asset freezes and travel bans on entities linked to Myanmar military following February 2021 coup and violence against protesters
+          significance: High, economic response to political crisis generating regional spillover effects
+        - event: UK Sanctions on Myanmar Military Conglomerates Following 2021 Coup
+          date: April 2021
+          location: London, United Kingdom
+          description: |
+            UK sanctions Myanmar military-owned businesses operating in multiple sectors following February 2021 coup and violence against protesters
+          significance: High, economic response to political crisis generating regional spillover effects
+        - event: Australia-China Economic Tensions
+          date: May 2020
+          location: Beijing, China
+          definition: |
+            China imposes trade restrictions on multiple Australian commodity exports (barley, wine, coal, timber) following Australian calls for COVID-19 origin investigation, creating opportunities for ASEAN commodity exporters to fill market gaps (affecting ASEAN trade flows)
+          significance: High, demonstrating economic coercion patterns and regional trade diversion effects
+
+    - code: SUPLY_CHAIN_INIT
+      name: Supply Chain Initiative
+      definition: |
+        Government-led initiatives addressing supply chain resilience, diversification, critical mineral access, technology transfer arrangements, and production network reconfiguration. Encompasses policies responding to pandemic disruptions, U.S.-China decoupling pressures, and efforts to reduce strategic dependencies through friend-shoring, near-shoring, or domestic capacity building.
+
+      inclusion_criteria:
+        - Government policies or agreements explicitly addressing supply chain issues
+        - Critical mineral or rare earth element cooperation agreements
+        - Technology transfer or domestic manufacturing capacity building with supply chain rationale
+        - Multilateral frameworks addressing supply chain resilience (Indo-Pacific Economic Framework supply chain pillar)
+        - Corporate relocation or investment incentives with strategic supply chain diversification objectives
+
+      exclusion_criteria:
+        - Routine foreign direct investment without supply chain diversification strategic framing
+        - General industrial policy without explicit supply chain risk mitigation objectives
+        - Private corporate supply chain decisions without government policy linkages
+
+      boundary_cases:
+        - |
+          COVID-19 pandemic responses: Code supply chain policies emerging from pandemic disruptions as Supply Chain Initiative if they establish enduring structural changes beyond immediate crisis response
+        - |
+          Technology decoupling: Code policies promoting domestic semiconductor, telecommunications, or advanced technology production capacity as Supply Chain Initiative when motivated by reducing dependencies or technology competition
+        - |
+          Regional production networks: Code ASEAN initiatives promoting intra-regional supply chain integration (ASEAN automotive components cooperation, ASEAN electronics production networks) as Supply Chain Initiative if driven by resilience or strategic objectives
+
+      anchoring_examples:
+        - event: Indo-Pacific Economic Framework (IPEF) Supply Chain Agreement
+          date: November 2023
+          location: San Francisco, United States
+          definition: |
+            Fourteen Indo-Pacific nations including seven ASEAN members agree to supply chain cooperation framework establishing crisis response mechanisms, diversification initiatives, and transparency commitments
+          significance: High, U.S.-led economic architecture initiative in Indo-Pacific lacking tariff liberalization
+        - event: U.S.-Viet Nam Semiconductor Cooperation
+          date: September 2023
+          location: Ha Noi (Hanoi), Viet Nam
+          definition: |
+            United States and Viet Nam announce initiatives promoting Vietnamese semiconductor manufacturing capacity as part of supply chain diversification from China, including technology partnerships and investment incentives
+          significance: High, U.S. efforts to build alternative semiconductor supply chains
+        - event: China-ASEAN Rare Earth Industrial Cooperation
+          date: December 2021
+          location: Ganzhou, China
+          definition: |
+            China announces expanded rare earth processing cooperation with ASEAN countries, maintaining regional supply chain dominance while potentially creating dependencies
+          significance: Medium, Chinese efforts to preserve critical mineral supply chain centrality
+        - event: ASEAN Automotive Integration Initiatives
+          date: November 2004
+          location: Viang Chan (Vientiane), Lao PDR (Laos)
+          definition: |
+            ASEAN members implement policies promoting regional automotive component supply chain integration reducing extra-regional dependencies and enhancing collective competitiveness. Foundational agreement included to illustrate long-term policy evolution
+          significance: Medium, intra-ASEAN economic integration with supply chain resilience dimensions
+        - event: Japan-ASEAN Supply Chain Resilience Initiative
+          date: April 2020
+          location: Virtual
+          definition: |
+            Japanese government launches program subsidizing Japanese companies to diversify production from China to Southeast Asia, accelerating post-pandemic supply chain reconfiguration
+          significance: High, government-led production network restructuring affecting regional investment flows

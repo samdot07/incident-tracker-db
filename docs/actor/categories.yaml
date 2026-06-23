@@ -1,0 +1,163 @@
+actor_category_definitions:
+  code: ACTOR
+  name: Actor Category Definitions
+
+  subcategories: 
+    - code: STATE_MLITR
+      name: State Military
+      definition: |
+        Regular armed forces of nation-states including armies, navies, air forces, marine corps, and unified military commands operating under formal military command structures and national defense ministries. Distinguished from paramilitary forces by formal military status, combatant legal status under international law, and conventional military organizational structures
+
+      organisational_scope:
+        - National military services and branches (Chinese People's Liberation Army, U.S. Indo-Pacific Command, Philippine Armed Forces)
+        - Theater or regional military commands (PLA Southern Theater Command, U.S. Seventh Fleet)
+        - Specialized military units if operating as part of regular military structure (special operations forces, military intelligence units)
+
+      exclusion_criteria:
+        - Coast guard or maritime law enforcement even if militarized (code as State Paramilitary)
+        - Intelligence agencies with civilian command chains (code as Government Civilian)
+        - Police or internal security forces (code as State Paramilitary if conducting border/maritime operations with regional dimensions)
+
+      anchoring_examples:
+        - Zhongguo Renmin Jiefangjun Haijun (People's Liberation Army Navy, Chinese naval forces)
+        - U.S. Indo-Pacific Command (U.S. military unified combatant command)
+        - Hukbong Dagat ng Pilipinas (Philippine Navy, Philippine military naval service)
+        - Tatmadaw (Myanmar Royal Armed Forces, Myanmar military forces)
+        - Kong Thap Thai (Royal Thai Armed Forces, Thai military)
+      
+    - code: STATE_PARMLITR
+      name: State Paramilitary
+      definition: |
+        State-controlled or state-affiliated forces with military capabilities but distinct organizational status from regular military, including coast guards, maritime law enforcement, border guards, gendarmerie-type forces, and state-coordinated militia operating under civilian agency command but performing quasi-military functions particularly in maritime law enforcement and border security
+
+      organisational_scope:
+        - Coast guard and maritime law enforcement agencies (China Coast Guard, Philippine Coast Guard, Viet Nam Marine Police)
+        - People's Armed Police or internal security forces when conducting external operations
+        - Maritime militia with state coordination (Chinese People's Armed Forces Maritime Militia)
+        - Border guard forces with paramilitary capabilities
+      
+      exclusion_criteria:
+        - |
+          Regular military forces regardless of law enforcement mission (naval vessels conducting law enforcement operations coded as State Military)
+        - Purely civilian law enforcement without maritime/border/external dimensions
+        - Non-state militia lacking government coordination
+
+      anchoring_examples:
+        - Zhongguo Haijingju (China Coast Guard, Chinese maritime law enforcement, operates under China Coast Guard Administration)
+        - Zhongguo Haishang Minbing (People's Armed Forces Maritime Militia, Chinese fishing vessels with state coordination performing maritime missions)
+        - Tanod Baybayin ng Pilipinas (Philippine Coast Guard, Philippine maritime law enforcement, distinct from Philippine Navy)
+        - Canh sat bien Viet Nam (Viet Nam Coast Guard, Vietnamese maritime law enforcement)
+        - Bakamla (Indonesian Maritime Security Agency, coordinating body for Indonesian maritime enforcement)
+
+    - code: GOV_CIVL
+      name: Government Civilian
+      definition: |
+        Civilian government agencies and officials conducting foreign policy, intelligence operations, diplomatic functions, or civilian-led national security activities. Distinguished from military/paramilitary by civilian organizational structures and policy rather than operational functions, though intelligence agencies may conduct operations similar to military intelligence units
+
+      organisational_scope:
+        - Foreign ministries and diplomatic services (Ministry of Foreign Affairs entities)
+        - Intelligence agencies with civilian leadership (though attribution often limited)
+        - National security councils and inter-agency policy coordinating bodies
+        - Government spokespeople and official communications representing state positions
+      
+      exclusion_criteria:
+        - Military intelligence units operating within defense ministry structures (code as State Military)
+        - State-owned enterprises unless explicitly conducting government-directed political operations
+        - Individual politicians unless speaking in official government capacity
+
+      anchoring_examples:
+        - Zhonghua Renmin Gongheguo Waijiaobu (Chinese Ministry of Foreign Affairs, diplomatic policy formulation and official statements)
+        - U.S. State Department (American diplomatic agency)
+        - Kagawaran ng Ugnayang Panlabas (Philippine Department of Foreign Affairs, Philippine diplomatic agency)
+        - ASEAN Secretariat when conducting diplomatic functions (though also International Organization)
+
+    - code: NSTATE_ARMD_GRP
+      name: Non-State Armed Group
+      definition: |
+        Armed organizations operating outside formal state military structures including insurgent groups, ethnic armed organizations, secessionist movements, and organized armed opposition to governments. Distinguished from terrorist organizations (which may overlap) by political objectives and territorial control aspirations, and from criminal networks by primarily political rather than economic motivations
+
+      organisational_scope:
+        - Ethnic armed organizations in Myanmar (Karen National Union, Kachin Independence Army, Arakan Army)
+        - |
+          Separatist movements with armed components (Moro Islamic Liberation Front in Philippines historically, though peace process transformed status)
+        - Opposition armed groups in civil conflicts (People's Defense Forces in Myanmar post-2021 coup)
+
+      exclusion_criteria:
+        - |
+          Terrorist organizations primarily motivated by ideological rather than territorial-political objectives (code separately if you establish separate category, or include here with notation)
+        - Criminal organizations even if armed (code as Criminal Network)
+        - Pro-government militia (code as State Paramilitary if government-coordinated)
+
+      anchoring_examples:
+        - Kayin Amyotha Ahnye (Karen National Union/Karen National Liberation Army, ethnic armed organization in Myanmar)
+        - Wunpawng Mungdan Shanglawt Hpyen Dap (Kachin Independence Army, ethnic armed organization in Myanmar's Kachin State)
+        - Arakha Tatdaw (Arakan Army, ethnic armed organization in Myanmar's Rakhine State)
+        - Amyotha Nyi-nyut-ye Ah-so-ya (National Unity Government/People's Defense Forces, opposition to Myanmar military junta post-2021)
+
+    - code: CRIMNL_NTWRK
+      name: Criminal Network
+      definition: |
+        Organized criminal syndicates and networks engaged in transnational crime with regional security implications including drug trafficking, human trafficking, illegal wildlife trade, piracy, and organized smuggling operations. Distinguished from armed groups by primarily economic rather than political motivations and from state actors by lack of government authority
+
+      organisational_scope:
+        - Drug trafficking organizations operating transnationally
+        - Human trafficking and migrant smuggling networks
+        - Piracy operations in regional waters (Malacca Strait piracy, Sulu Sea kidnapping-for-ransom)
+        - Organized illegal wildlife trade networks
+
+      exclusion_criteria:
+        - Individual criminal acts without organized network structures
+        - State-sponsored criminal activity (government smuggling or sanctions evasion coded under appropriate state actor category)
+        - Terrorist financing networks (code under non-state armed group or terrorist organization if separate category established)
+
+      anchoring_examples:
+        - Piracy syndicates operating in Malacca Strait or Sulu Sea
+        - Transnational drug trafficking networks operating through Mekong region
+        - Human trafficking networks exploiting Ruáingga (Rohingya) refugees
+        - Illegal wildlife trade networks (though often incidents focus on state enforcement responses)
+
+    - code: PRVT_SEC
+      name: Private Security
+      definition: |
+        Private military and security companies, commercial security providers, and private armed contractors operating in regional contexts. Distinguished from state forces by commercial corporate structure and contractual relationships, though may operate on behalf of governments or in close coordination with state actors
+
+      organisational_scope:
+        - Private military companies providing security services
+        - Maritime private security contractors aboard commercial vessels
+        - Corporate security entities if involved in incidents with regional security dimensions
+
+      exclusion_criteria:
+        - Unarmed private security or commercial security without military dimensions
+        - Private companies providing non-security services even if government-contracted
+
+      note: |
+        This actor type may have limited representation in the database as private military companies play smaller roles in East/Southeast Asian contexts compared to other regions, but category remains available for completeness
+
+    - code: INTL_ORG
+      name: International Organisation
+      definition: |
+        Multilateral intergovernmental organizations including regional institutions, global governance bodies, and international tribunals. Distinguished from state actors by representing collective member state positions and from non-governmental organizations by official intergovernmental status
+
+      organisational_scope:
+        - ASEAN Secretariat and ASEAN institutional mechanisms
+        - United Nations entities with regional operations or relevance
+        - International tribunals (Permanent Court of Arbitration, International Court of Justice when adjudicating regional disputes)
+        - Regional organizations (ASEAN Regional Forum, East Asia Summit institutional structures)
+
+      exclusion_criteria:
+        - Non-governmental organizations lacking official intergovernmental status
+        - Informal groupings without institutional structures (Quad treated as collective of member states rather than organization)
+
+      anchoring_examples:
+        - ASEAN Secretariat (administrative body of Association of Southeast Asian Nations)
+        - United Nations (when UN entities conduct operations or issue reports relevant to regional security)
+        - Permanent Court of Arbitration (when adjudicating South China Sea arbitration)
+        - Mekong River Commission (institutional body governing Mekong water resources with security implications)
+
+    - code: OTHER
+      name: Other
+      definition: |
+        Residual category for actors not fitting primary classifications including hybrid entities, ambiguous organizations, or novel actor types emerging in evolving security environment
+
+      usage: |
+        Minimize use of "Other" category through careful application of primary categories; when necessary, provide detailed description explaining why primary categories prove inadequate and specifying actor nature

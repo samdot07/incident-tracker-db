@@ -1,0 +1,232 @@
+diplomatic:
+  code: DIPLMTC
+  name: Diplomatic Event Category
+  definition: |
+    Diplomatic events encompass government-to-government engagement, communication, and institutional interaction involving official representatives of nation-states or multilateral organizations. The diplomatic category focuses on political-relationship dimensions rather than military-operational or economic-transactional aspects, though significant overlap exists requiring hierarchical precedence rules specified below
+  
+  subcategorires:
+    - code: HI_LVL_SUMMIT
+      name: High-Level Summit
+      definition: |
+        Meetings involving heads of state (presidents, monarchs), heads of government (prime ministers, chancellors), or equivalent executive leaders at bilateral or multilateral forums. Includes formal state visits, bilateral summit meetings, and participation in institutionalized multilateral summit frameworks (ASEAN Summit, ASEAN+3, East Asia Summit, ASEAN Regional Forum at leaders' level)
+      
+      inlcusion: 
+        - Meeting participants include at least one head of state/government
+        - Formal agenda with documented outcomes (joint statements, communiqués, memoranda of understanding)
+        - Official government announcement or media coverage confirming summit occurrence
+        - Substantive policy discussions beyond purely ceremonial functions
+      
+      exclusion_criteria: 
+        - Ministerial-level meetings without executive leadership participation (code as Ministerial Engagement)
+        - |
+          Informal encounters at multilateral gatherings without substantive bilateral engagement (brief hallway conversations during UN General Assembly not coded unless generating specific outcomes)
+        - Purely ceremonial events without policy substance (ribbon-cutting ceremonies, cultural performances attended by leaders)
+      
+      boundary_cases:
+        - |
+          Virtual Summits: Include video-conference summit meetings if they possess formal agendas and documented outcomes comparable to in-person summits
+        - | 
+          Summit Cancellations: Code announced summits that are subsequently cancelled or postponed as Diplomatic Signaling if the cancellation itself carries strategic messaging significance (e.g., Philippine President Duterte cancelling planned visit to Japan in 2016 following international criticism)
+        - |
+          Side Meetings at multilateral forums: Code substantive bilateral meetings occurring on margins of larger multilateral gatherings (e.g., Xi-Biden bilateral meeting at G20 Summit) if they generate distinct outcomes, separate from the parent multilateral event
+      
+      anchoring_examples:
+        - event: ASEAN Summit
+          date: November 2022
+          location: Phnom Penh, Cambodia 
+          description: |
+            Annual ASEAN Summit attended by all ten heads of government, discussing South China Sea Code of Conduct negotiations, Myanmar crisis, and economic integration initiatives
+          significance: High, documented through ASEAN Chairman's Statement and bilateral meeting readouts
+        - event: U.S.-ASEAN Special Summit
+          date: May 2022
+          location: Washington, D.C., United States
+          description: |
+            President Biden hosts all ten ASEAN leaders for unprecedented Washington summit, elevating U.S.-ASEAN relations to Comprehensive Strategic Partnership
+          significance: Critical, marking shift in U.S. regional engagement strategy
+        - event: Xi Jinping State Visit to Philippines
+          date: November 2018
+          location: Maynila (Manila), Philippines
+          description: |
+            Chinese President Xi Jinping conducts state visit to Manila, meeting President Duterte, signing 29 bilateral agreements covering infrastructure, trade, and defense cooperation
+          significance: High, symbolizing Philippines' strategic pivot toward China during Duterte administration
+        - event: Singapore-Indonesia Leaders' Retreat
+          date: January 2022
+          location: Pulau Bintan (Bintan), Indonesia
+          description: | 
+            Prime Minister Lee Hsien Loong and President Joko Widodo hold annual retreat discussing bilateral cooperation, regional economic recovery, and ASEAN leadership
+          significance: Medium, routine institutionalized bilateral mechanism
+        - event: East Asia Summit 
+          date: November 2023
+          location: DKI Jakarta (Jakarta), Indonesia 
+          description: |
+            Leaders from 18 countries (10 ASEAN + 8 dialogue partners) convene for annual forum addressing maritime security, economic resilience, climate change, with particular focus on South China Sea tensions and Myanmar crisis
+          significance: High, primary leaders-level platform for Asia-Pacific security dialogue
+
+    - code: MINISTRL_ENGMNT
+      name: Ministerial Engagement
+      definition: |
+        Meetings, joint statements, or coordinated activities involving cabinet-level government officials below head of state/government rank, including foreign ministers, defense ministers, trade/commerce ministers, and other senior appointed officials. Encompasses bilateral ministerial dialogues, multilateral ministerial meetings within ASEAN frameworks, and "2+2" format dialogues combining foreign and defense ministers
+
+      inclusion_criteria:
+        - Participants hold ministerial or equivalent senior appointed government positions
+        - Formal meeting agenda with policy substance
+        - Official documentation through joint statements, memoranda, or government press releases
+        - Represents official government policy positions
+
+      exclusion_criteria:
+        - Working-level official meetings (deputy minister, director-general levels typically excluded unless extraordinary circumstances)
+        - Private sector or non-governmental delegations even if involving former officials
+        - Academic or track-two dialogues lacking official government representation
+      
+      boundary_cases:
+        - |
+          Special envoys and presidential representatives: Include if they carry explicit authority to represent head of state/government in negotiations (e.g., U.S. Presidential Special Envoy for Climate meeting ASEAN counterparts)
+        - |
+          Defense minister + military chief combinations: Code as Ministerial Engagement based on presence of cabinet-level minister, even if accompanied by uniformed military leadership
+        - | 
+          Ministerial participation at multilateral conferences: Code only substantive bilateral ministerial meetings or significant multilateral ministerial outcomes, not mere attendance at conferences|
+
+      anchoring_examples:
+        - event: ASEAN Foreign Ministers' Meeting 
+          date: February 2021
+          location: Virtual 
+          description: |
+            All ten ASEAN foreign ministers convene emergency meeting on Myanmar coup, issuing consensus statement calling for dialogue and peaceful resolution
+          significance: High, ASEAN's primary response mechanism to Myanmar crisis
+        - event: U.S.-Philippines 2+2 Ministerial Dialogue
+          date: July 2022
+          location: Maynila (Manila), Philippines
+          description: |
+            U.S. Secretaries of State and Defense meet Philippine counterparts, announcing expansion of Enhanced Defense Cooperation Agreement sites and reaffirming mutual defense treaty commitments
+          significance: High, substantive defense cooperation enhancement
+        - event: China-ASEAN Foreign Ministers' Special Meeting
+          date: June 2020
+          location: Virtual 
+          description: |
+            Chinese Foreign Minister Wang Yi hosts special virtual meeting with ASEAN counterparts on COVID-19 cooperation and South China Sea Code of Conduct negotiations
+          significance: Medium, routine diplomatic engagement with some substantive outcomes
+        - event: ASEAN Defense Ministers' Meeting Plus (ADMM-Plus)
+          date: June 2023
+          location: Singapore, Singapore
+          description: |
+            Defense ministers from ASEAN and eight dialogue partners convene for biennial meeting addressing maritime security, humanitarian assistance, cyber defense, and counterterrorism cooperation
+          significance: Medium, institutionalized multilateral defense dialogue mechanism
+        - event: India-Viet Nam Defense Minister Meeting
+          date: June 2022
+          location: New Delhi, India
+          description: |
+            Indian and Vietnamese defense ministers meet to discuss defense industry cooperation, naval collaboration, and capacity building, signing implementation protocol for existing defense agreements
+          significance: Medium, bilateral defense relationship strengthening
+
+    - code: DIPLMTC_SIGNLN
+      name: Diplomatic Signaling
+      definition: |
+        Official government communications, statements, protests, or symbolic actions intended to convey policy positions, register objections, signal commitment, or influence other actors' behavior through public or private diplomatic channels. Includes diplomatic notes/démarches, official protests, public statements by spokespersons or leaders, ambassador recalls or expulsions, and symbolic diplomatic gestures
+
+      inclusion_criteria:
+        - | 
+          Communication originates from official government channels (foreign ministry spokespersons, official government statements, diplomatic correspondence)
+        - Content addresses specific policy issues, incidents, or interstate relations
+        - Clear signaling intent regarding positions, objections, or commitments
+        - Documented through government websites, press releases, or credible media reporting of official statements
+
+      exclusion_criteria:
+        - Unofficial statements by individual politicians not representing formal government positions
+        - Academic or think tank analyses even if authored by former officials
+        - Media speculation about government positions without official confirmation
+        - Social media posts by officials unless representing formal government communications
+
+      boundary_cases:
+        - |
+          Head of state/government public speeches: Code substantive policy announcements or position statements as Diplomatic Signaling; ceremonial remarks without policy content excluded
+        - |
+          Diplomatic notes without public disclosure: Include if existence and general content confirmed through credible sources, even if full text not publicly available
+        - |
+          Implicit signaling through action: Code symbolic actions with clear diplomatic messaging intent (e.g., military parade on disputed territory anniversary, choosing summit participation timing to signal displeasure)
+
+      anchoring_examples:
+        - event: Philippine Diplomatic Protest to China
+          date: November 2021
+          location: Maynila (Manila), Philippines
+          description: |
+            Philippines Department of Foreign Affairs issues formal protest note to China regarding "swarming and threatening presence" of Chinese maritime militia vessels near Pag-asa Island (Thitu Island) in Spratlys
+          significance: Medium, routine but documented assertion of sovereignty claims
+        - event: ASEAN Foreign Ministers' Statement on South China Sea
+          date: August 2020
+          location: Virtual
+          description: |
+            ASEAN foreign ministers issue rare joint statement expressing concern over "serious incidents in the South China Sea" and reaffirming commitment to international law including UNCLOS
+          significance: High, unusual ASEAN consensus statement addressing contentious issue
+        - event: Myanmar Recalls Ambassador from Singapore
+          date: March 2021
+          location: Nay Pyi Taw (Naypyidaw), Myanmar
+          description: |
+            Singapore announces recall of its ambassador to Myanmar and downgrading of diplomatic representation following February coup, one of strongest ASEAN diplomatic responses
+          significance: High, rare ASEAN member public censure of fellow member
+        - event: U.S. Statement Rejecting China's South China Sea Claims
+          date: July 2020
+          location: Washington, D.C., United States
+          description: |
+            U.S. Secretary of State issues statement declaring China's South China Sea maritime claims "completely unlawful," explicitly rejecting Chinese positions and aligning with 2016 arbitral tribunal ruling
+          significance: Critical, shift in U.S. declaratory policy from neutrality to explicit position-taking
+        - event: Viet Nam Protest Over Chinese Survey Ship 
+          date: July 2019
+          location: Vanguard Bank
+          description: | 
+            Viet Nam's Foreign Ministry issues protest note and public statement condemning Chinese survey vessel operations near Vanguard Bank within Viet Nam's exclusive economic zone
+          significance: Medium, recurring pattern of Vietnamese diplomatic objections to Chinese activities
+
+    - code: INSTNL_MECH
+      name: Institutional Mechanism
+      definition: |
+        Establishment, modification, significant activities, or termination of formal diplomatic institutions, multilateral frameworks, bilateral mechanisms, treaties, or organizational structures governing interstate relations. Includes creation of new dialogue platforms, treaty ratifications, institutionalized mechanism launches, and significant organizational reforms
+
+      inclusion_criteria:
+        - Formal establishment or modification of institutional structures
+        - Treaty signing, ratification, or entry into force
+        - Launch of new dialogue mechanisms or frameworks
+        - Significant procedural or structural changes to existing institutions
+        - Official documentation through treaties, memoranda of understanding, joint declarations
+
+      exclusion_criteria:
+        - Routine meetings of existing mechanisms without structural changes (code under appropriate meeting type - Summit, Ministerial Engagement)
+        - Informal dialogue proposals not resulting in institutional establishment
+        - Expired or inactive mechanisms without documented termination or significant renewal
+
+      boundary_cases:
+        - |
+          Mechanism upgrades: Code elevation of relationship status (e.g., Strategic Partnership to Comprehensive Strategic Partnership) as Institutional Mechanism if accompanied by formal framework documents or structural changes
+        - | 
+          Treaty renewals: Code automatic renewals of existing treaties only if renewal involves renegotiation, amendment, or significant policy debate; routine administrative renewals excluded
+        - |
+          Non-binding frameworks: Include "outlooks," "visions," or "frameworks" even if not legally binding treaties, if they establish new institutional structures or mechanisms
+
+      anchoring_examples:
+        - event: ASEAN Outlook on Indo-Pacific Adoption
+          date: June 2019
+          location: Krung Thep Maha Nakhon (Bangkok), Thailand
+          description: |
+            ASEAN adopts official "ASEAN Outlook on the Indo-Pacific" document establishing ASEAN's framework for engagement with Indo-Pacific strategic concept, asserting ASEAN centrality
+          significance: High, ASEAN's strategic response to great power Indo-Pacific competition
+        - event: Regional Comprehensive Economic Partnership (RCEP) Entry into Force
+          date: January 2022
+          description: |
+            World's largest free trade agreement enters force after ratification by required threshold of signatories (10 ASEAN states plus China, Japan, South Korea, Australia, New Zealand), creating integrated economic bloc
+          significance: Critical, major economic integration milestone
+        - event: AUKUS Partnership Announcement
+          date: September 2021
+          location: Virtual
+          description: |
+            Australia, United Kingdom, United States announce trilateral security partnership (AUKUS) including nuclear-powered submarine technology transfer, reshaping Indo-Pacific security architecture
+          significance: Critical, major strategic realignment with implications for regional balance
+        - event: Enhanced Defense Cooperation Agreement (EDCA)
+          date: April 2014
+          location: Maynila (Manila), Philippines
+          description: |
+            Bilateral defense agreement allowing rotational U.S. military presence at Philippine bases enters force; expanded in 2023 to include four additional sites (with 2023 expansion)
+          significance: High, institutional foundation for U.S.-Philippine defense cooperation enhancement
+        - event: ASEAN-China Code of Conduct Negotiations Launch
+          location: Maynila (Manila), Philippines
+          description: |
+            ASEAN and China formally launch negotiations for binding Code of Conduct in South China Sea, establishing institutional negotiation framework (ongoing, substantive agreement remains unachieved as of 2024) 
+          significance: High, institutional mechanism attempting to manage maritime disputes

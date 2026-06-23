@@ -1,0 +1,62 @@
+attribution_coding_decision_trees:
+  code: DCISN_TREE
+  name: Attribution Coding Decision Trees
+
+  subcategories:
+  - code: MLITR_PARMLITR
+    name: |
+      Decision Tree 1: State Military vs. State Paramilitary Distinction
+    root:
+      question: Is the actor operating under formal military command structure (defense ministry, military chief of staff chain of command)?
+      yes: State Military
+      no:
+        question: Is the actor a coast guard, maritime law enforcement, border guard, or internal security force?
+        yes: State Paramilitary
+        no:
+          question: Does the actor possess military capabilities (armed vessels, weapons systems) but operate under civilian agency command?
+          yes: State Paramilitary
+          no: Consider Government Civilian or Other depending on actor nature
+
+  - code: NONSTATE_ARMD_GRP_CRIMNL_NTWRK
+    name: |
+      Decision Tree 2: Non-State Armed Group vs. Criminal Network Distinction
+    root:
+      question: |
+        Does the organization's primary stated objective involve political goals (autonomy, self-determination, government change, territorial control)?
+      yes: Code as Non-State Armed Group
+      no:
+        question: |
+          Does the organization primarily engage in profit-motivated criminal activity (drug trafficking, smuggling, kidnapping-for-ransom)?
+        yes: Code as Criminal Network
+        no:
+          question: Does the organization combine political and criminal motivations or operate in gray area?
+          conditions:
+            - if: "political objectives predominate or organization controls territory"
+              outcome: "Non-State Armed Group"
+            - if: "criminal profit predominates and lacks political control aspirations"
+              outcome: "Criminal Network"
+            - else:
+              outcome: "Other (provide detailed description)"
+
+  - code: ATTR_CONF
+    name: |
+      Decision Tree 3: Attribution Confidence Assignment
+    root:
+      question: Does official government acknowledge actor involvement through press releases, statements, or military announcements?
+      yes: Code as Confirmed (proceed to verify consistency with other evidence)
+      no:
+        question: Do multiple (3+) independent credible sources provide consistent accounts of actor involvement?
+        yes: Code as Confirmed
+        no:
+          question: |
+            Does strong circumstantial evidence (operational patterns, technical analysis, capabilities matching) suggest specific actor involvement?
+          yes: Code as Suspected
+          no: 
+            question: |
+              Has credible third party (foreign government, international organization, established institution) made definitive attribution?
+            yes: Code as Third-Party Attribution
+            no: 
+              question: Do multiple credible sources provide materially conflicting accounts of actor involvement?
+              yes: Code as Contested
+              no: |
+                If single plausible attribution exists with minimal evidence, code as Suspected; if no reasonable attribution possible, consider excluding incident or coding with extensive notes explaining uncertainty

@@ -1,0 +1,44 @@
+military_impact_dimensions:
+  code: MLITR
+  name: Military Impact Dimensions
+  quantifiable_metrics:
+    - killed:
+      measurement: INTEGER, fatalities directly resulting from incident
+      
+      source_standards: |
+        Official government casualty announcements preferred; credible news reporting from outlets with access to official sources or direct reporting acceptable; human rights organization documentation acceptable for incidents where governments provide no figures or contested figures
+      
+      coding_protocols: |
+        Use minimum confirmed figures when ranges provided; if sources disagree on figures, use most credible source (government official statements > established news outlets > advocacy organizations) and note discrepancy in event notes
+      
+      missing_data: NULL (not zero) for incidents where casualty figures unknown or not applicable (diplomatic meetings, economic agreements)
+    
+    - wounded:
+      measurement: INTEGER, injured persons requiring medical treatment
+      
+      source_standards: Parallel to fatalities, official announcements preferred
+      
+      coding_protocols: |
+        Distinguish wounded requiring hospitalization from minor injuries if sources permit. When not specified, include all reported injuries. Note if figures represent initial reports subject to revision
+      
+      missing_data: NULL for non-applicable incidents
+
+    - displaced:
+      measurement: INTEGER, persons forcibly displaced (internally displaced persons, refugees) directly attributable to incident
+      
+      source_standards: UNHCR figures, government statistics, credible humanitarian organization reports
+      
+      coding_protocols: |
+        Code displacement only when sources explicitly link displacement to specific incident. For ongoing conflicts, code displacement associated with particular escalations or campaigns rather than cumulative figures across all incidents
+      
+      missing_data: NULL for incidents not generating displacement
+
+  qualitative_assessments:
+    definition: |
+      Given that most ASEAN security incidents in the 2016-present timeframe involve zero casualties (diplomatic engagements, economic measures, non-lethal gray-zone coercion), military impact assessment extends beyond fatality counts to operational and strategic military dimensions (captured in event description and strategic significance rather than separate coded field)
+      
+    military_operational_impact:
+      - Force posture changes (deployments, redeployments, readiness level alterations)
+      - Military infrastructure development or damage
+      - Operational tempo changes (increased patrols, exercises, surveillance)
+      - Capability demonstrations (weapons systems employment, new technology displays)

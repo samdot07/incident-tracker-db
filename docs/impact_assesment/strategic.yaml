@@ -1,0 +1,110 @@
+strategic_significance_assessment:
+  code: STRTGY
+  name: Strategic Significance Assessment
+  definition: |
+    This composite dimension synthesizes military, economic, political, and legal-normative impacts with strategic context to assess overall incident importance for regional security dynamics. Unlike specific impact dimensions measuring particular consequences, strategic significance evaluates incidents' importance for broader power competition, alliance dynamics, normative trajectories, and potential escalation risks
+  
+  subcategory:
+    - code: LOW
+      name: Low
+      definition: |
+        Incident possesses limited implications beyond immediate bilateral context, represents routine interaction pattern without novelty or escalation, generates minimal regional attention, and unlikely to influence broader strategic trajectories
+      
+      indicators: |
+        Limited media coverage, absence of significant official reactions beyond immediate parties, represents continuation of established patterns, affects narrow issue area without spillover implications
+      
+      anchoring_examples:
+      - Routine diplomatic working-level meetings without substantive outcomes
+      - Small-scale economic agreements of limited value
+      - Minor technical cooperation arrangements
+      - Isolated low-intensity incidents quickly resolved
+    
+    - code: MID 
+      name: Medium
+      definition: |
+        Incident possesses notable implications for bilateral relationships or specific issue areas, may establish incremental precedents, generates regional awareness, but does not fundamentally alter strategic dynamics or require major policy responses
+      
+      indicators: |
+        Moderate media attention, official statements by involved parties and some regional states, represents meaningful development in specific relationship or issue area, may influence related incidents but limited broader systemic implications
+      
+      anchoring_examples:
+      - Bilateral ministerial meetings generating substantive cooperation agreements
+      - Economic coercion incidents generating protests but not prompting major policy shifts
+      - Maritime incidents prompting diplomatic responses but no operational escalation
+      - Defense cooperation agreements enhancing specific bilateral relationships without fundamentally shifting regional balance
+      - Regional forum meetings with tangible but incremental outcomes
+
+    - code: HI
+      name: High
+      definition: |
+        Incident significantly affects bilateral or multilateral relationships, establishes important precedents, generates substantial regional attention and policy responses, influences strategic calculations of multiple actors, but does not represent transformational shifts or crisis-level developments
+      
+      indicators: |
+        Extensive media coverage including analysis from regional security specialists, official reactions from multiple regional states, policy adjustments by affected parties, influences related issue areas or bilateral relationships, cited in strategic planning discussions
+      
+      anchoring_examples:
+      - Major defense cooperation agreements substantially enhancing alliance capabilities (EDCA expansion)
+      - Large-scale economic agreements reshaping trade architecture (RCEP signing)
+      - Significant armed incidents generating casualty concerns and escalation risks (Myanmar conflict escalations affecting border regions)
+      - Diplomatic initiatives establishing new institutional mechanisms (ASEAN Outlook on Indo-Pacific)
+      - Maritime incidents involving major powers with potential escalation implications (China-U.S. vessel encounters)
+      - Economic coercion campaigns affecting significant trade values and prompting diversification strategies
+    
+    - code: CRTCL
+      name: Critical
+      definition: |
+        Incident fundamentally affects regional security architecture, represents transformational developments, generates crisis-level attention requiring high-level policy responses, establishes major precedents with systemic implications, or possesses potential for major escalation or conflict
+        
+      indicators: |
+        Sustained intensive international media coverage, responses from senior leadership across multiple countries, emergency diplomatic engagement, policy reassessments and strategic reviews, long-term implications for regional order, referenced as watershed moments in strategic analyses
+      
+      anchoring_examples:
+      - event: Myanmar military coup 
+        date: February 2021
+        location: Nay Pyi Taw (Naypyidaw), Myanmar
+        definition: |
+          Fundamental disruption of ASEAN member political system, humanitarian crisis, regional institutional challenge to ASEAN consensus norms
+        status: Critical
+      - event: AUKUS partnership announcement 
+        date: September 2021
+        location: Washington, D.C., United States
+        definition: |
+          Major strategic realignment, defense technology sharing unprecedented scale, implications for regional balance and alliance structures
+        status: Critical
+      - event: South China Sea Arbitral Tribunal ruling 
+        date: July 2016
+        location: Den Haag (The Hague), Nederland (Netherlands)
+        definition: |
+          Definitive international legal adjudication of maritime disputes, China's rejection establishing precedent, implications for rules-based order 
+        status: Critical
+      - event: RCEP entry into force 
+        date: January 2022
+        definition: World's largest trade bloc, economic integration milestone, alternative architecture excluding United States 
+        status: Critical (borderline Critical/High)
+      - event: Hypothetical major armed clash between regional powers
+        definition: Would represent potential conflict escalation 
+        status: Critical
+      - event: Ruaingga (Rohingya) crisis
+        date: August 2017
+        location: Rakhai Pray Nay (Rakhine State), Myanmar
+        definition: Significant humanitarian crises with massive displacement  
+        status: Critical
+  
+  coding_protocols:
+  - |
+    Consider both immediate incident characteristics and broader strategic context; same type incident may receive different significance ratings based on context (one maritime incident among many = Medium; unprecedented escalation of tactics = High)
+  - |
+    Evaluate significance from regional perspective rather than global; incidents of critical importance for Southeast Asia receive Critical rating even if global attention limited
+  - |
+    When uncertain between adjacent categories, prefer lower rating (Medium vs. High ambiguity → code as Medium) to avoid significance inflation, but provide detailed description supporting higher rating if warranted
+  - |
+    Significance assessments may evolve as incidents' longer-term implications become apparent; initial coding based on incident-time assessment, with potential notes acknowledging subsequent reassessment
+  - Use event description and notes to explain significance assessment rationale, particularly for High and Critical ratings
+
+  evidence_standards:
+  - |
+    Media coverage intensity and analytical depth (are regional security specialists writing analytical pieces? Are major outlets providing extensive coverage?)
+  - Official government reactions scope and level (routine statements vs. emergency meetings, working-level vs. leadership responses)
+  - Policy impact evidence (are governments adjusting strategies, allocating resources, or changing behaviors in response?)
+  - Expert analysis characterizing incident significance (think tank reports, academic commentary, policy brief assessments)
+  - Historical comparison (is incident novel or unprecedented? How does it compare to prior similar incidents?)

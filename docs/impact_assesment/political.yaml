@@ -1,0 +1,114 @@
+political_impact_dimensions:
+  code: POLTIC
+  name: Political Impact Dimensions
+  definition: |
+    This dimension assesses bilateral or multilateral relationship quality changes attributable to incidents, using ordinal categories capturing diplomatic relationship trajectories
+  
+  subcategories:
+    - code: IMPRV
+      name: Improved
+      definition: |
+        Incident generates measurable improvement in bilateral/multilateral relationship quality through enhanced cooperation, tension reduction, or positive diplomatic momentum
+      
+      indicators: |
+        Official statements characterizing relationship elevation, new cooperation mechanisms established, prior disputes resolved or de-escalated, increased high-level engagement frequency
+      
+      anchoring_examples:
+      - event: U.S.-ASEAN Special Summit 
+        date: May 2022
+        location: Washington, D.C., United States
+        definition: Elevated relationship to Comprehensive Strategic Partnership
+        status: Improved
+      - event: China-Philippines bilateral agreements 
+        date: November 2018
+        location: Maynila (Manila), Philippines
+        definition: Following years of tension, summit generates 29 cooperation agreements improving relations
+        status: Improved
+      - event: ASEAN-China dialogue reducing South China Sea tensions (hypothetical if occurred)
+        definition: Demonstrable de-escalation following diplomatic engagement
+        status: Improved
+
+    - code: STBL
+      name: stable
+      definition: |
+        Incident occurs within context of stable relationship without generating significant positive or negative diplomatic consequences, or positive and negative effects roughly balance
+      
+      indicators: |
+        Routine diplomatic engagement without relationship status changes, incidents managed through established mechanisms without escalation, no significant official rhetoric changes
+      
+      anchoring_examples:
+      - event: 55th ASEAN Foreign Ministers' Meeting
+        date: November 2022
+        location: Phnom Penh, Cambodia
+        definition: Regular institutionalized engagement maintaining stable relationships
+        status: Stable
+      - event: Brunei–Malaysia maritime encounter near Limbang
+        date: March 2020
+        location: Limbang, Negeri Sarawak (Sarawak), Malaysia
+        definition: |
+          A Malaysian vessel was reported to have entered Brunei’s claimed waters. Minor incident creating brief tension followed by return to normal
+        status: Stable
+      - event: Defense cooperation agreement renewals
+        definition: Continuation of existing arrangements without major changes 
+        status: Stable
+
+    - code: DETRIOR
+      name: deteriorated
+      definition: |
+        Incident generates measurable worsening of bilateral/multilateral relationship quality through increased tensions, reduced cooperation, or negative diplomatic momentum
+      
+      indicators: |
+        Official protest statements, diplomatic démarches, reduced engagement frequency, cooperation mechanisms suspended, public rhetorical tensions, but relationships remain intact with diplomatic channels functioning
+      
+      anchoring_examples:
+      - event: Chinese maritime militia swarming incidents
+        date: September 2023
+        location: South China Sea
+        definition: Generate Philippine protests, diplomatic tensions, but no relationship rupture
+        status: Deteriorated
+      - event: Economic coercion incidents
+        definition: Informal restrictions generate bilateral tensions and protests
+        status: Deteriorated
+      - event: 57th ASEAN Foreign Ministers' Meeting
+        date: July 2024
+        location: Viang Chan (Vientiane), Lao PDR (Laos)
+        definition: ASEAN disunity over South China Sea statements. Failure to achieve consensus generates intra-ASEAN tensions 
+        status: Deteriorated
+
+    - code: RUPTR 
+      name: ruptured
+      definition: |
+        Incident generates severe relationship breakdown including diplomatic channel suspensions, ambassador recalls, cooperation mechanism terminations, or moves toward adversarial postures
+      
+      indicators: |
+        Ambassador recall or expulsion, diplomatic relations suspension or downgrade, comprehensive cooperation cessation, official rhetoric characterizing relationship as adversarial, severing of institutional mechanisms
+      
+      anchoring_examples:
+      - event: Myanmar coup 2021 response by some ASEAN members
+        date: March 2021
+        locaiton: Nay Pyi Taw (Naypyidaw), Myanmar
+        definition: Singapore ambassador recall, cooperation suspensions 
+        status: Ruptured (for specific bilateral relationships, not all ASEAN-Myanmar relations)
+      - event: Hypothetical major armed clash
+        definition: If theoretical interstate armed conflict occurred, could generate relationship rupture
+        status: Ruptured
+      - event: Severe diplomatic crises (rare in contemporary ASEAN)
+        definition: Complete breakdown of diplomatic engagement 
+        status: Ruptured
+
+  coding_protocols:
+    - |
+      Assess political impact relative to pre-incident relationship baseline; same incident may generate different impact assessments for different bilateral dyads (China-Philippines maritime incident may deteriorate China-Philippines relations while leaving China-Vietnam relations stable)
+    - |
+      Use NULL for incidents lacking clear bilateral/multilateral political relationship dimensions (internal security incidents, purely technical agreements, unilateral actions not eliciting partner responses)
+    - |
+      For multilateral incidents (ASEAN summits, regional forums), assess primary political trajectory or code as Stable if maintaining status quo represents the outcome
+    - |
+      Note in event description which specific bilateral relationships the political impact assessment references if incident involves multiple countries with varying relationship effects
+
+  evidence_standards:
+  - Official government statements characterizing relationship status
+  - Diplomatic engagement frequency changes measurable through meeting counts
+  - Cooperation mechanism status (established, suspended, terminated)
+  - Media analysis by credible regional affairs specialists interpreting relationship trajectories
+  - Comparative historical context (is current tension level higher/lower than prior periods?)

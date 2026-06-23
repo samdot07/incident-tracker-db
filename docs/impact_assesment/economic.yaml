@@ -1,0 +1,32 @@
+economic_impact_dimensions:
+  code: ECON
+  name: Economic Impact Dimensions
+  quantifiable_metrics:
+    economic_impact:
+      measurement: NUMERIC(15,2), storing estimated economic consequences in U.S. dollars
+      
+      measurement_approaches:
+        - |
+          Trade agreements: Estimated bilateral trade value affected by agreement provisions (tariff eliminations, market access); use government estimates from official impact assessments or economic modeling studies by credible institutions
+        - |
+          Infrastructure financing: Project value as stated in financing agreements or credible media reporting
+        - |
+          Economic coercion: Estimated trade value affected by restrictions, calculated from prior-year trade statistics for affected products/sectors; use conservative estimates
+        - |
+          Sanctions: Estimated economic costs based on targeted asset values, affected trade volumes, or economic modeling by think tanks/academic institutions
+      
+      source_standards: |
+        Official government figures (finance ministry, trade ministry, statistical agencies) preferred; multilateral development bank project documentation; credible economic think tank analyses; business press reporting citing company or government sources
+      
+      coding_protocols: |
+        Convert all figures to USD using exchange rates contemporaneous with incident; for agreements with multi-year impacts, code initial year implementation value or total project value with notation in description; prefer conservative estimates when ranges provided
+      
+      missing_data: |
+        NULL for incidents without quantifiable economic dimensions (most diplomatic signaling, military incidents without economic consequences)
+  
+  qualitative_dimension:
+    - Supply chain disruption or reconfiguration
+    - Investment climate effects
+    - Economic statecraft effectiveness (did coercive measures achieve stated objectives?)
+    - Market access implications
+    - Technology transfer or denial
